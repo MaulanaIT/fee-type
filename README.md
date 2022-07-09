@@ -1,16 +1,3 @@
-<div id="bbts-container">
-	<div id="bbts-header">
-		<div id="bbts-package">
-			<span id="bbts-package-name">Module Specification</span>
-			<span id="bbts-module-label">Module:</span>
-			<span id="bbts-module-name">Agent Fee Type</span>
-		</div>
-		<div id="bbts-company">
-			<img src="http://demobb.endurancetechnologysolution.com/logo/Endurance-Logo-white.png" width="150px"/>
-		</div>
-	</div>
-</div>
-
 # Description
 This specification is used when an agent user manages fee type .
 ## UI
