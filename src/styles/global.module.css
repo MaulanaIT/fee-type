@@ -1,0 +1,149 @@
+.button {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+    padding: 8px 16px;
+    min-width: 96px;
+}
+
+.card {
+    background-color: white;
+    /* border: 1px solid #D9DFE7; */
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px #00000029;
+    padding: 48px;
+    position: relative;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+
+.container>.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: var(--sidebar-width);
+    overflow: hidden;
+    padding-bottom: var(--footer-height);
+    position: relative;
+    width: calc(100% - var(--sidebar-width));
+}
+
+.container>.content>.box {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+}
+
+.container>.content>.box>.pages {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    gap: 12px;
+}
+
+.container>.content>.box>.pages>a,
+.container>.content>.box>.pages>p {
+    color: #818181;
+}
+
+.container>.content>.box>.pages>a:hover {
+    color: #E84D0E;
+}
+
+.container>.content>.box>.pages>p.active {
+    color: #E84D0E;
+}
+
+.container>.content>.box>.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 28px;
+    margin-top: 12px;
+}
+
+.label_important {
+    color: red;
+}
+
+.label_info {
+    align-items: center;
+    border: 1px solid #818181;
+    border-radius: 50%;
+    color: #818181;
+    display: inline-flex;
+    font-size: 10px;
+    height: 16px;
+    justify-content: center;
+    padding: 4px;
+    width: 16px;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input_group>.error {
+    color: red;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.input_group>input {
+    padding-right: 26px;
+}
+
+.input_group>span {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+}
+
+table .action {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+table .action>* {
+    cursor: pointer;
+}
+
+table .checkbox {
+    position: relative;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    background-color: #818181;
+    box-shadow: 0px 0px 3px #00000029;
+    content: attr(tooltip);
+    color: white;
+    display: none;
+    font-size: 12px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    position: absolute;
+    top: 100%;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+}
+
+.tooltip:hover:before {
+    display: block;
+}

@@ -1,0 +1,53 @@
+.popup {
+    align-items: center;
+    background-color: #00000029;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    padding: 24px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+.popup>.container {
+    align-items: center;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.popup>.container>.action {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.popup>.container>.action>.cancel {
+    background-color: white;
+    border: 1px solid #027F71;
+    color: #027F71;
+    font-size: 12px;
+    text-align: center;
+}
+
+.popup>.container>.action>.delete,
+.popup>.container>.action>.close {
+    background-color: #027F71;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.popup>.container>.response {
+    font-size: 16px;
+    font-weight: 600;
+}

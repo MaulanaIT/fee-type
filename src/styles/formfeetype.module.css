@@ -1,0 +1,142 @@
+.action {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.action>.back,
+.action>.cancel {
+    background-color: white;
+    border: 1px solid #707070;
+    color: #707070;
+    font-size: 12px;
+    text-align: center;
+}
+
+.action>.save {
+    background-color: #027F71;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.form {
+    align-items: flex-start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    min-height: 260px;
+}
+
+.form>.code {
+    background-color: #F3F4F4;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.form>.code>.title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 6px;
+}
+
+.form>.code>.input,
+.form>.detail>.input {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.form>.detail>.input>input {
+    max-width: 200px;
+    width: 100%;
+}
+
+.form>.code>.input>p,
+.form>.detail>.input>p {
+    padding-top: 2px;
+}
+
+.form>.detail>.input>textarea {
+    max-width: 280px;
+}
+
+.form>.code>.input:not(:last-child),
+.form>.detail>.input:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.form>.detail {
+    background-color: white;
+}
+
+.translation {
+    position: relative;
+}
+
+.translation>.title {
+    border-bottom: 1px solid #D9DFE7;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 4px;
+    margin-bottom: 24px;
+}
+
+.translation>.form_tab {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.translation>.form_tab>.form {
+    grid-template-columns: 4fr 2fr;
+    min-height: auto;
+}
+
+.translation>.form_tab>.card {
+    background-color: white;
+    border-top-left-radius: 0;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 24px;
+    position: relative;
+}
+
+.translation>.form_tab>.tab {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.translation>.form_tab>.tab>.card {
+    background-color: white;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.translation>.form_tab>.tab>.card:not(.disabled)::before {
+    background-color: white;
+    content: '';
+    height: 100%;
+    right: -2px;
+    position: absolute;
+    top: 0;
+    width: 6px;
+    z-index: 1;
+}
+
+.translation>.form_tab>.tab>.card.disabled {
+    background-color: #ECECEC;
+}
+
+.translation>.form_tab>.tab>.note {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: auto;
+}

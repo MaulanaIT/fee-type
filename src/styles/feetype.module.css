@@ -1,0 +1,117 @@
+.action {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.action>select,
+.action>.remove {
+    background-color: #027F71;
+    color: white;
+    font-size: 12px;
+}
+
+.action>select {
+    background-image: url('../assets/ic-caret-down-white.svg');
+    padding-right: 32px;
+}
+
+.advanced_options {
+    background-color: #F5F7F9;
+    box-shadow: none;
+    border: none;
+    height: 0;
+    border-radius: 8px;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+}
+
+.advanced_options.active {
+    box-shadow: 0px 0px 5px #3C46531A;
+    border: 1px solid #C7CDD6D9;
+    height: 120px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.advanced_options>.box {
+    left: 24px;
+    position: relative;
+    top: 24px;
+}
+
+.advanced_options>.box>select {
+    background-color: white;
+    border: 1px solid #D9DFE7;
+    width: 100px;
+}
+
+.advanced_options>.box>.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header>.action {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+.header>.action>.create {
+    align-items: center;
+    background-color: #F3C244;
+    color: #5E5E5E;
+    gap: 6px;
+    display: flex;
+}
+
+.header>.action>.circle {
+    align-items: center;
+    background-color: #5E5E5E;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
+}
+
+.header>.filter {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+}
+
+.header>.filter>input {
+    width: 250px;
+}
+
+.header>.filter>.toggle {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    gap: 12px;
+}
+
+.header>.filter>.toggle>img {
+    transform: rotateX(0deg);
+    transition: .4s ease-in-out;
+}
+
+.header>.filter>.toggle.active>img {
+    transform: rotateX(180deg);
+}

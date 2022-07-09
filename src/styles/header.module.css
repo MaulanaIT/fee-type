@@ -1,0 +1,156 @@
+nav {
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 1px 6px #00000029;
+    display: flex;
+    height: var(--header-height);
+    justify-content: space-between;
+    padding: 24px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+nav>.logo {
+    object-fit: cover;
+    position: relative;
+}
+
+nav>.menu {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+}
+
+nav>.menu>.notification {
+    position: relative;
+}
+
+nav>.menu>.notification::before {
+    background-color: red;
+    border-radius: 50%;
+    content: '';
+    height: 8px;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    width: 8px;
+}
+
+nav>.menu>.notification>img,
+nav>.menu>.profile>img {
+    cursor: pointer;
+}
+
+nav>.menu>.notification>.popup>.item {
+    background-color: #F3F4F4;
+    padding: 24px;
+}
+
+nav>.menu>.notification>.popup {
+    padding: 4px;
+    top: 68px;
+    width: 240px;
+}
+
+nav>.menu>.notification>.popup>.item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+nav>.menu>.notification>.popup,
+nav>.menu>.profile>.popup {
+    background-color: white;
+    box-shadow: 0px 0px 6px #00000029;
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+nav>.menu>.notification>.popup.active,
+nav>.menu>.profile>.popup.active {
+    display: block;
+}
+
+nav>.menu>.profile {
+    align-items: center;
+    border: 1px solid rgba(200, 200, 200, 1);
+    border-radius: 50%;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    padding: 4px;
+    position: relative;
+    width: 48px;
+}
+
+nav>.menu>.profile>.popup {
+    top: 76px;
+}
+
+nav>.menu>.profile>.popup>.profile {
+    align-items: center;
+    border-bottom: 1px solid #F3F4F4;
+    display: flex;
+    gap: 12px;
+    padding: 24px;
+    width: 200px;
+}
+
+nav>.menu>.profile>.popup>.profile>.data {
+    display: block;
+}
+
+nav>.menu>.profile>.popup>.profile>.data>.job {
+    color: #818181;
+    font-size: 12px;
+}
+
+nav>.menu>.profile>.popup>.profile>.data>.name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav>.menu>.profile>.popup>.menu {
+    padding: 24px;
+    position: relative;
+}
+
+nav>.menu>.profile>.popup>.menu>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+nav>.menu>.profile>.popup>.menu>ul>li {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    list-style: none;
+}
+
+nav>.menu>.profile>.popup>.menu>ul>li>p {
+    color: #333333;
+    font-size: 14px;
+}
+
+nav>.menu>.question {
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 2px;
+    width: 24px;
+}
