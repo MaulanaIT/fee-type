@@ -3,7 +3,7 @@ This specification is used when an agent user manages fee type .
 ## UI
 ### Index
 - Prerequisite
-	- [-] This page is accessible: conditional, based on permissions that are granted to the User which are inherited from the User's User Type and then overridden by permissions directly assigned to the User to View Master Fee Type.
+	- [ ] This page is accessible: conditional, based on permissions that are granted to the User which are inherited from the User's User Type and then overridden by permissions directly assigned to the User to View Master Fee Type.
 	- [ ] If not accessible: redirect to dashboard
 - Heading
 	- [ ] Text: "Master Fee Type"
