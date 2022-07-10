@@ -33,15 +33,15 @@
 
 .popup>.container>.action>.cancel {
     background-color: white;
-    border: 1px solid #027F71;
-    color: #027F71;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     font-size: 12px;
     text-align: center;
 }
 
 .popup>.container>.action>.delete,
 .popup>.container>.action>.close {
-    background-color: #027F71;
+    background-color: var(--primary-color);
     color: white;
     font-size: 12px;
     text-align: center;

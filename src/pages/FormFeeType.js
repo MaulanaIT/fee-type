@@ -25,7 +25,7 @@ export default function FormFeeType() {
             location.state.type === 'detail' && 'Details';
 
     // State for Switch Tab Language
-    const [getActiveTab, setActiveTab] = useState(1);
+    const [getActiveTab, setActiveTab] = useState('Indonesia');
 
     // State for Controlled Component
     const [getValueDescription, setValueDescription] = useState(type === 'Create' ? '' : location.state.data.description);
@@ -198,13 +198,19 @@ export default function FormFeeType() {
                                 <p className={style.title}>Translation</p>
                                 <div className={style.form_tab}>
                                     <div className={style.tab}>
-                                        <div className={cx(global.card, style.card, getActiveTab === 2 && style.disabled)} onClick={() => setActiveTab(1)}>Indonesia {getValueFeeTypeNameIndonesia === '' && <sup><img src={IconDanger} width={16} heigh={16} alt="Icon Danger" /></sup>} </div>
-                                        <div className={cx(global.card, style.card, getActiveTab === 1 && style.disabled)} onClick={() => setActiveTab(2)}>Chinese Simplified {getValueFeeTypeNameChinese === '' && <sup><img src={IconDanger} width={16} heigh={16} alt="Icon Danger" /></sup>} </div>
+                                        <div className={cx(global.card, style.card, getActiveTab === 'Chinese' && style.disabled)} onClick={() => setActiveTab('Indonesia')}>Indonesia {getValueFeeTypeNameIndonesia === '' && <sup><img src={IconDanger} width={16} heigh={16} alt="Icon Danger" /></sup>} </div>
+                                        <div className={cx(global.card, style.card, getActiveTab === 'Indonesia' && style.disabled)} onClick={() => setActiveTab('Chinese')}>Chinese Simplified {getValueFeeTypeNameChinese === '' && <sup><img src={IconDanger} width={16} heigh={16} alt="Icon Danger" /></sup>} </div>
                                         <div className={style.note}>Note: <sup><img src={IconDanger} width={12} heigh={12} alt="Icon Danger" /></sup> Incomplete Data</div>
+                                    </div>
+                                    <div className={style.tab_mobile}>
+                                        <select value={getActiveTab} onChange={e => setActiveTab(e.target.value)}>
+                                            <option value="Indonesia">Indonesia </option>
+                                            <option value="Chinese">Chinese</option>
+                                        </select>
                                     </div>
                                     <div className={cx(global.card, style.card, style.form)}>
                                         <div className={style.detail}>
-                                            {getActiveTab === 1 ?
+                                            {getActiveTab === 'Indonesia' ?
                                                 <React.Fragment>
                                                     <div className={style.input}>
                                                         <p>Fee Type Name <span className={global.label_important}>*</span> <sup className={global.label_info}>i</sup></p>
@@ -222,7 +228,7 @@ export default function FormFeeType() {
                                                     </div>
                                                 </React.Fragment>
                                                 :
-                                                getActiveTab === 2 &&
+                                                getActiveTab === 'Chinese' &&
                                                 <React.Fragment>
                                                     <div className={style.input}>
                                                         <p>Fee Type Name <span className={global.label_important}>*</span> <sup className={global.label_info}>i</sup></p>
@@ -244,6 +250,7 @@ export default function FormFeeType() {
                                     </div>
                                 </div>
                             </div>
+                            <div className={style.note_mobile}>Note: <sup><img src={IconDanger} width={12} heigh={12} alt="Icon Danger" /></sup> Incomplete Data</div>
                         </div>
                         <div className={style.action}>
                             {type === 'Details' ?

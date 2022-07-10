@@ -6,6 +6,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 // Import Styles
 import 'bootstrap/dist/css/bootstrap.css';
+import 'datatables.net-dt/css/jquery.dataTables.css';
 import 'datatables.net-bs5/css/dataTables.bootstrap5.css';
 import 'datatables.net-select-bs5/css/select.bootstrap5.css';
 import global from './styles/global.module.css';

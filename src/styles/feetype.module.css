@@ -8,7 +8,7 @@
 
 .action>select,
 .action>.remove {
-    background-color: #027F71;
+    background-color: var(--primary-color);
     color: white;
     font-size: 12px;
 }
@@ -114,4 +114,32 @@
 
 .header>.filter>.toggle.active>img {
     transform: rotateX(180deg);
+}
+
+@media screen and (max-width: 991px) {
+    .action {
+        justify-content: center;
+    }
+
+    .action>select,
+    .action>.remove {
+        text-align: center;
+        width: 100%;
+    }
+
+    .header {
+        align-items: flex-end;
+        flex-direction: column-reverse;
+    }
+
+    .header>.filter {
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .header>.filter input {
+        width: 100%;
+    }
 }

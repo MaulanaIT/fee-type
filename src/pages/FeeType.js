@@ -70,11 +70,12 @@ export default function FeeType() {
                     htmlFeeType.push(
                         <tr key={index}>
                             <td className={global.checkbox}></td>
-                            <th className='d-none'>{item.id}</th>
+                            <td className='d-none'>{item.id}</td>
+                            <td className={`dt-control ${window.innerWidth > 991 ? 'd-none' : ''}`}></td>
                             <td>{item.fee_type_code}</td>
                             <td>{item.fee_type_name}</td>
-                            <td>{item.description}</td>
-                            <td>{item.status === 1 ? 'Active' : item.status === 3 && 'Inactive'}</td>
+                            <td className={window.innerWidth <= 991 ? 'd-none' : ''}>{item.description}</td>
+                            <td className={window.innerWidth <= 991 ? 'd-none' : ''}>{item.status === 1 ? 'Active' : item.status === 3 && 'Inactive'}</td>
                             <td>
                                 <div className={global.action}>
                                     <Link to={'/master-data-management/edit-fee-type'} state={{ type: 'edit', data: item }} className={global.tooltip} tooltip="Click to Edit">
@@ -143,7 +144,7 @@ export default function FeeType() {
                 orderable: false,
                 targets: 0
             }],
-            dom: 't<"d-flex align-items-center justify-content-between"<"d-flex align-items-center gap-4"li><<Page>p>>r',
+            dom: 't<"d-flex align-items-center gap-sm-4 gap-2 justify-content-sm-between justify-content-center flex-wrap"<"d-flex align-items-center gap-4"li><<Page>p>>r',
             language: {
                 info: 'Showing _START_ - _END_ of _TOTAL_',
                 lengthMenu: '_MENU_',
@@ -214,6 +215,39 @@ export default function FeeType() {
 
         $(`#table-search`).on('keyup', function () {
             dataTable.draw();
+        });
+
+        function format(data) {
+            return (
+                '<table style="border: 0px solid transparent" class="w-100">' +
+                '<tbody style="border: 0px solid transparent">' +
+                '<tr>' +
+                '<td>Description</td>' +
+                '<td>' +
+                data[5] +
+                '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td>Status:</td>' +
+                '<td>' +
+                data[6] +
+                '</td>' +
+                '</tbody>' +
+                '</table>'
+            );
+        }
+
+        $('#table-data tbody').on('click', 'td.dt-control', function () {
+            var tr = $(this).closest('tr');
+            var row = dataTable.row(tr);
+
+            if (row.child.isShown()) {
+                row.child.hide();
+                tr.removeClass('shown');
+            } else {
+                row.child(format(row.data())).show();
+                tr.addClass('shown');
+            }
         });
 
         $.fn.DataTable.ext.pager.numbers_length = 3;
@@ -317,15 +351,16 @@ export default function FeeType() {
                     <button type='button' className={cx(style.remove, global.button)} onClick={DeleteSelectItem}>REMOVE FEE TYPE</button>
                 </div>
             }
-            <Table id='table-data' ref={tableRef} striped bordered responsive hover>
+            <Table id='table-data' ref={tableRef} striped bordered responsive hover width={'100%'}>
                 <thead>
-                    <tr className={'align-middle text-nowrap'}>
+                    <tr className={'align-middle'}>
                         <th className={'text-center'}><FormCheckInput id='select-all' /></th>
+                        <th className={window.innerWidth > 991 ? 'd-none' : ''}></th>
                         <th className='d-none'>ID</th>
                         <th>Fee Type Code</th>
                         <th>Fee Type Name</th>
-                        <th>Description</th>
-                        <th>Status</th>
+                        <th className={window.innerWidth <= 991 ? 'd-none' : ''}>Description</th>
+                        <th className={window.innerWidth <= 991 ? 'd-none' : ''}>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

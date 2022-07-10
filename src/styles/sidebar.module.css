@@ -15,6 +15,15 @@
     width: 300px;
 }
 
+.container>.close {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 4;
+}
+
 .container>ul {
     height: 100%;
     margin: 0;
@@ -63,4 +72,33 @@
 
 .container>ul>li>.submenu.active {
     color: #FDC300;
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        width: 0px;
+    }
+
+    .container.active {
+        width: 300px;
+    }
+
+    .container>.close {
+        display: block;
+    }
+
+    .container>ul>li {
+        min-height: 36px;
+    }
+}
+
+@media screen and (max-width: 299px) {
+    .container.active {
+        width: 100%;
+    }
+
+    .container>ul>li>.menu,
+    .container>ul>li>.submenu {
+        white-space: normal;
+    }
 }

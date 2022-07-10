@@ -15,7 +15,7 @@
 }
 
 .action>.save {
-    background-color: #027F71;
+    background-color: var(--primary-color);
     color: white;
     font-size: 12px;
     text-align: center;
@@ -72,6 +72,16 @@
     background-color: white;
 }
 
+.note {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: auto;
+}
+
+.note_mobile {
+    display: none;
+}
+
 .translation {
     position: relative;
 }
@@ -86,7 +96,7 @@
 
 .translation>.form_tab {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 2fr 6fr;
 }
 
 .translation>.form_tab>.form {
@@ -135,8 +145,72 @@
     background-color: #ECECEC;
 }
 
-.translation>.form_tab>.tab>.note {
-    font-size: 12px;
-    font-style: italic;
-    margin-top: auto;
+.translation>.form_tab>.tab_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .action {
+        justify-content: center;
+    }
+
+    .action>.back,
+    .action>.cancel,
+    .action>.save {
+        width: 100%;
+    }
+
+    .form {
+        align-items: stretch;
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .form>.detail {
+        margin-bottom: 64px;
+    }
+
+    .form>.code>.input,
+    .form>.detail>.input {
+        grid-template-columns: 1fr;
+    }
+
+    .note_mobile {
+        display: block;
+        font-size: 12px;
+        font-style: italic;
+        margin-top: 12px;
+    }
+
+    .translation>.form_tab {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .translation>.form_tab>.form {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .translation>.form_tab>.tab {
+        display: none;
+    }
+
+    .translation>.form_tab>.tab_mobile {
+        display: block;
+    }
+
+    .translation>.form_tab>.tab_mobile>select {
+        background-color: #ECECEC;
+        background-position-x: 95%;
+        border: none;
+        border-radius: 8px 8px 0 0;
+        box-shadow: 0px 0px 6px #00000029;
+        font-weight: bold;
+        padding: 12px;
+        position: relative;
+        width: 100%;
+    }
 }

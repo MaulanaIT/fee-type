@@ -1,11 +1,14 @@
 // Import Library
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 // Import Library Components
 import { cx } from './Helper';
+import { ToggleSidebar } from './store/ReducerDataDummy';
 
 // Import Assets
+import IconBars from '../assets/ic-bars.svg';
 import IconBell from '../assets/ic-bell.svg';
 import IconLogo from '../assets/ic-logo.svg';
 import IconLockOpen from '../assets/ic-lock-open.svg';
@@ -22,15 +25,18 @@ export default function Header() {
     const [getActivePopup, setActivePopup] = useState(false);
 
     const location = useLocation();
+    const dispatch = useDispatch();
 
     // Auto Close Popup Profile when page change
     useEffect(() => {
+        setActiveNotification(false);
         setActivePopup(false);
     }, [location.pathname]);
 
     return (
         <nav>
             <div className={style.logo}>
+                <img src={IconBars} className={style.toggle} width={36} height={36} alt="Icon Bars" onClick={() => dispatch(ToggleSidebar())} />
                 <img src={IconLogo} width={200} height={48} alt="Icon Logo" />
             </div>
             <div className={style.menu}>

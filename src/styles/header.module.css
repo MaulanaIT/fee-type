@@ -12,8 +12,16 @@ nav {
 }
 
 nav>.logo {
+    align-items: center;
+    display: flex;
+    gap: 24px;
     object-fit: cover;
     position: relative;
+}
+
+nav>.logo>.toggle {
+    cursor: pointer;
+    display: none;
 }
 
 nav>.menu {
@@ -153,4 +161,53 @@ nav>.menu>.question {
     margin: 0;
     padding-bottom: 2px;
     width: 24px;
+}
+
+@media screen and (max-width: 991px) {
+    nav {
+        padding: 12px;
+    }
+
+    nav>.logo {
+        gap: 12px;
+    }
+
+    nav>.logo>img:last-child {
+        height: 32px;
+        width: 100%;
+    }
+
+    nav>.logo>.toggle {
+        display: block;
+        height: 24px;
+        width: 24px;
+    }
+
+    nav>.menu {
+        gap: 8px;
+    }
+
+    nav>.menu>.question,
+    nav>.menu>.notification>img {
+        height: 20px;
+        width: 20px;
+    }
+
+    nav>.menu>.notification>.popup {
+        top: 42px;
+    }
+
+    nav>.menu>.profile {
+        height: 40px;
+        width: 40px;
+    }
+
+    nav>.menu>.profile>img {
+        height: 32px;
+        width: 32px;
+    }
+
+    nav>.menu>.profile>.popup {
+        top: 50px;
+    }
 }

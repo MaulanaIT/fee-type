@@ -99,6 +99,18 @@ select:focus {
   box-shadow: none !important;
 }
 
+table.dataTable td.dt-control:before {
+  align-items: center;
+  display: flex !important;
+  justify-content: center;
+  margin-top: 4px !important;
+}
+
+table.dataTable td.dt-control.shown:before {
+  background-color: red;
+  content: '-';
+}
+
 table>thead>tr {
   background-color: #5E5E5E;
   color: white;
@@ -144,4 +156,19 @@ table>tbody>tr:last-child>td:last-child {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --footer-height: 36px;
+    --header-height: 50px;
+  }
+
+  footer {
+    justify-content: center;
+    left: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+  }
 }

@@ -192,6 +192,9 @@ export const storeSlice = createSlice({
             link: '',
             response: '',
         },
+        Sidebar: {
+            active: false,
+        }
     },
     reducers: {
         HidePopupConfirmation: (state) => {
@@ -228,6 +231,9 @@ export const storeSlice = createSlice({
             state.PopupResponse.link = action.payload.link;
             state.PopupResponse.response = action.payload.response;
         },
+        ToggleSidebar: (state) => {
+            state.Sidebar.active = !state.Sidebar.active;
+        },
         UpdateStatus: (state, action) => {
             state.FeeTaxType.forEach(item => {
                 if (item.id === action.payload.id)
@@ -245,6 +251,7 @@ export const {
     ReplaceData,
     ShowPopupConfirmation,
     ShowPopupResponse,
+    ToggleSidebar,
     UpdateData,
     UpdateStatus
 } = storeSlice.actions;
