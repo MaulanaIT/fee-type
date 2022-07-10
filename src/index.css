@@ -56,6 +56,7 @@ footer {
   padding-right: 24px;
   position: fixed;
   width: calc(100% - var(--sidebar-width));
+  z-index: 4;
 }
 
 textarea,
