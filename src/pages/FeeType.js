@@ -288,9 +288,9 @@ export default function FeeType() {
     // Update Status Multiple Fee Type
     const UpdateSelectItemStatus = () => {
         getSelectedData.forEach(item => {
-            dispatch(UpdateStatus({ status: getValueSelectUpdateStatus, id: item.id }));
+            dispatch(UpdateStatus({ status: getValueSelectUpdateStatus === 'Active' ? 1 : 3, id: item.id }));
         });
-
+        
         document.getElementById('select-all').checked = false;
 
         setValueSelectUpdateStatus('');
