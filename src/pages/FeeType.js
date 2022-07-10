@@ -123,7 +123,7 @@ export default function FeeType() {
             return result;
         });
         // eslint-disable-next-line
-    }, []);
+    }, [getValueSearchTable]);
 
     useEffect(() => {
         if (getValueSelectUpdateStatus !== '') UpdateSelectItemStatus();
