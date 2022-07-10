@@ -107,14 +107,16 @@ export default function FeeType() {
     // Custom Search
     useEffect(() => {
         $.fn.dataTable.ext.search.push(function (setting, data, dataIndex) {
-            let search = getValueSearchTable;
+            let search = document.getElementById('table-search').value;
 
             let result = false;
 
             for (let i = 0; i < data.length; i++) {
-                if (data[i].includes(search)) {
+                if (data[i] !== '' && data[i].includes(search)) {
 
-                    result = true;
+                    result = true; 
+                    console.log(data[i])
+                    console.log(search)
 
                     break;
                 }
@@ -122,8 +124,7 @@ export default function FeeType() {
 
             return result;
         });
-        // eslint-disable-next-line
-    }, [getValueSearchTable]);
+    }, []);
 
     useEffect(() => {
         if (getValueSelectUpdateStatus !== '') UpdateSelectItemStatus();
