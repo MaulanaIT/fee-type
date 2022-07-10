@@ -115,8 +115,6 @@ export default function FeeType() {
                 if (data[i] !== '' && data[i].includes(search)) {
 
                     result = true; 
-                    console.log(data[i])
-                    console.log(search)
 
                     break;
                 }
