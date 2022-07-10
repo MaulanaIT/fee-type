@@ -236,6 +236,8 @@ export default function FeeType() {
             );
         }
 
+        $('#table-data tbody').off('click');
+
         $('#table-data tbody').on('click', 'td.dt-control', function () {
             var tr = $(this).closest('tr');
             var row = dataTable.row(tr);
