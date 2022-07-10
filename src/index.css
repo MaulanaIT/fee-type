@@ -38,6 +38,11 @@ p {
   padding: 0 !important;
 }
 
+.dataTables_length select {
+  /* min-width: 64px; */
+  padding-right: 24px !important;
+}
+
 footer {
   align-items: center;
   background-color: white;
@@ -78,15 +83,20 @@ input {
   box-shadow: none !important;
 }
 
+.paginate_button {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
-  appearance: none;
+  appearance: none !important;
   background: transparent;
   background-image: url('assets/ic-caret-down.svg');
   background-repeat: no-repeat;
-  background-position-x: 90%;
-  background-position-y: 50%;
+  background-position-x: 90% !important;
+  background-position-y: 50% !important;
   background-size: 12px;
   border-radius: 8px;
   color: #5E5E5E;
